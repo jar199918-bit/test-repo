@@ -1,0 +1,7 @@
+build_test:
+  stage: build
+  tags:
+    - docker
+  image: dockerhub.mos.ru/alpine:latest
+  script:
+    - echo "Тест buld stage"
