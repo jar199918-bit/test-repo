@@ -4,4 +4,4 @@ build_test:
     - docker
   image: dockerhub.mos.ru/alpine:latest
   script:
-    - echo "Тест buld stage"
+    - echo "Тест build stage"
