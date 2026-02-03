@@ -1,0 +1,19 @@
+build_frontend:
+  stage: build
+  tags:
+    - docker
+  image: dockerhub.mos.ru/alpine:latest
+  script:
+    - echo "=== СБОРКА ФРОНТЕНДА (из внешнего файла) ==="
+    - echo "Это задание загружено через include:local"
+    - echo "Создаю артефакты..."
+    - mkdir -p dist
+    - echo "frontend v1.0" > dist/frontend.txt
+    - echo "Дата $(date)" >> dist/frontend.txt
+    - echo "Job ID $CI_JOB_ID" >> dist/frontend.txt
+    - echo "Артефакты созданы:"
+    - ls -la dist/
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 hour
